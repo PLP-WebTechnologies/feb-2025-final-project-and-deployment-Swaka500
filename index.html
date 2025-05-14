@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <h1>Recipe Blog</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+<!-- Home Page with Image Slider -->
+    <div class="container" id="home">
+        <div class="slider-container">
+            <div class="Myslider">
+              <img src="image5.jpg"alt="Ugali">
+                <img src="image6.jpg" alt="Spaghetti">
+                <img src="image7.jpg" alt="Ugali">
+                 <img src="image1.jpg" alt="Ugali">
+                  <img src="image2.jpg" alt="Spaghetti">
+                   <img src="image3.jpg" alt="Spaghetti">
+                    <img src="image4.jpg" alt="Spaghetti">
+                    <img src="image55.jpg" alt="Spaghetti">
+                    <img src="image11.jpg" alt="Spaghetti">
+                    <img src="image22.jpg" alt="Spaghetti">
+                    <img src="image33.jpg" alt="Spaghetti">
+                    <img src="image44.jpg" alt="Spaghetti">
+                     <img src="image66.jpg" alt="Spaghetti">
+                     <img src="image77.jpg" alt="Spaghetti">
+                     <img src="image88.jpg" alt="Spaghetti">
+                     <img src="image20.jpg" alt="Spaghetti">
+                     <img src="image21.jpg" alt="Spaghetti">
+                     <img src="image22.jpg" alt="Spaghetti">
+                     <img src="image23.jpg" alt="Spaghetti">
+                     <img src="image24.jpg" alt="Spaghetti">
+            </div>
+        </div>
+    
+        <h2>Welcome to Derrick's Recipe Blog</h2>
+        <p>Explore a variety of delicious recipes crafted to ignite your culinary creativity. From traditional meals to contemporary dishes, i have something for everyone.</p>
+
+        <div id="recipes">
+            <div class="recipe-card">
+                <h3>Ugali</h3>
+                <span class="read-more">Read more...</span>
+                <div class="recipe-content" style="display: none;">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>2 cups maize flour</li>
+                        <li>4 cups water</li>
+                        <li>Pinch of salt</li>
+                    </ul>
+                    <p>Boil water, add maize flour gradually while stirring, and cook until thickened.</p>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <h3>Spaghetti</h3>
+                <span class="read-more">Read more...</span>
+                <div class="recipe-content" style="display: none;">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>200g spaghetti</li>
+                        <li>2 tablespoons olive oil</li>
+                        <li>2 cloves garlic, minced</li>
+                        <li>1 cup tomato sauce</li>
+                        <li>Salt and pepper to taste</li>
+                    </ul>
+                    <p>Boil spaghetti in salted water until al dente. In a pan, heat olive oil, add garlic, and sauté. Add tomato sauce, season, and mix in the cooked spaghetti.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About my Page -->
+    <div class="container" id="about">
+        <div class="about">
+            <h2>About</h2>
+            <p>Welcome to the Recipe Blog! my blog is a place where food enthusiasts of all skill levels can find easy-to-follow recipes, cooking tips, and inspiration to make delicious meals at home.</p>
+
+            <h3>My Mission</h3>
+            <p>My mission is to bring people together through food. Whether you're a beginner looking for your first recipe or a seasoned chef seeking new ideas, this blog is for you. I believe that cooking should be fun, and i want to help you create memorable meals for your family and friends.</p>
+
+            <h3>Who i'm</h3>
+            <p>The Recipe Blog was created as passionate food lover who loves experimenting with different ingredients and flavors. I believe that food is not just about nourishing the body, but also about nurturing relationships, memories, and culture.</p>
+
+            <h3>My Philosophy</h3>
+            <p>I believe in simplicity and authenticity in the kitchen. My recipes focus on easy-to-find ingredients and straightforward instructions, making it easier for anyone to prepare delicious meals. From traditional dishes passed down through generations to modern twists on old favorites, i strive to provide a diverse range of recipes for all occasions.</p>
+
+            <h3>Why i Started</h3>
+            <p>Food is a universal language that connects people from all walks of life. I started this blog to share my love of cooking with others and to help people discover new recipes they can incorporate into their everyday meals. My goal is to create a community where everyone can share their cooking experiences and learn from one another.</p>
+
+            <h3>Join my Community</h3>
+            <p>I'd love to hear from you! Feel free to leave a comment on any of recipes or get in touch through my <a href="#contact">Contact me</a> page. Let's share the joy of cooking together!</p>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="container" id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Recipe Blog</p>
+    </div>
+     <!-- JavaScript code -->
+    <script>
+// Image Slider - Continuous Loop
+let currentSlide = 0;
+const slider = document.querySelector('.Myslider');
+const slides = document.querySelectorAll('.Myslider img');
+const totalSlides = slides.length;
+
+// Clone the first slide and append it to the end for seamless looping
+const firstClone = slides[0].cloneNode(true);
+slider.appendChild(firstClone);
+
+function slideImages() {
+    currentSlide++;
+    slider.style.transition = 'transform 0.5s ease';
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Reset to the first slide instantly after the last one
+    if (currentSlide === totalSlides) {
+        setTimeout(() => {
+            slider.style.transition = 'none';
+            currentSlide = 0;
+            slider.style.transform = `translateX(0)`;
+        }, 500); // Delay to match transition duration
+    }
+}
+
+// Start sliding continuously
+setInterval(slideImages, 2000); // Slide every 2 seconds
+
+// Read More Functionality
+const readMoreButtons = document.querySelectorAll('.read-more');
+readMoreButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const content = button.nextElementSibling;
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+            button.textContent = 'Read more...';
+        } else {
+            content.style.display = 'block';
+            button.textContent = 'Read less';
+        }
+    });
+});
+
+// Contact Form Submission with Pop-Up Message
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Validation for name and email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (name === '' || email === '' || message === '') {
+        alert('All fields are required!');
+        return;
+    } else if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address!');
+        return;
+    }
+
+    // Display a pop-up message on successful submission
+    const popup = document.createElement('div');
+    popup.textContent = 'Message sent successfully!';
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.backgroundColor = '#4CAF50';
+    popup.style.color = 'white';
+    popup.style.padding = '1rem 2rem';
+    popup.style.borderRadius = '8px';
+    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    popup.style.zIndex = '1000';
+    document.body.appendChild(popup);
+
+    // Remove the pop-up after 2 seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 2000);
+
+    form.reset();
+});
+
+    </script>
+</body>
+</html>
